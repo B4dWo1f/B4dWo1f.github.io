@@ -12,6 +12,13 @@ images:
   - image_path: /assets/images/projects_logos/facetrack.png
     title: Face Track
     web: /projects/facetrack.html
+  - image_path: /assets/images/projects_logos/FORE.png
+    title: Aemet Data
+    web: /projects/FORE.html
+  - image_path: /assets/images/projects_logos/blnarxiv.png
+    title: BLNarXiv
+    web: /projects/BLNarXiv.html
+# check this --> https://www.w3schools.com/css/css3_shadows.asp
 ---
 
 <div class='clearfix'></div>
@@ -20,11 +27,15 @@ images:
       {% for image in page.images %}
       <li>
          <div class="press-logo">
-         <a href='{{ image.web}}'>
-         <img class="img_logo" src="{{ image.image_path }}"/>
-         </a>
+            <a href='{{ image.web}}'>
+               <img class="img_logo" src="{{ image.image_path }}"/>
+            </a>
          </div>
-         <span class="sr-only">{{ image.title}}</span>
+         <span class="sr-only">
+         <h4>
+            <a class='title_link' href='{{ image.web }}'>{{ image.title }}</a>
+         </h4>
+         </span>
       </li>
       {% endfor %}
    </ul>
